@@ -12,6 +12,7 @@ develop-eggs/
 include/
 lib/
 parts/
+share/
 src/*
 !src/collective
 var/
