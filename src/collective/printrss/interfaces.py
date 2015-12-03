@@ -5,6 +5,7 @@ from collective.printrss import _
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+from zope.interface import invariant, Invalid
 
 
 class ICollectivePrintrssLayer(IDefaultBrowserLayer):
@@ -41,3 +42,8 @@ class IRssFeed(Interface):
                       u'reloaded.'),
         required=True,
         default=100)
+
+    @invariant
+    def countInvariant(data):
+        if data.count > 20:
+            raise Invalid(_(u"Number of items must be <= 20!"))
