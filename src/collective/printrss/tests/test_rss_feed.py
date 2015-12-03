@@ -7,7 +7,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 
 from collective.printrss.testing import COLLECTIVE_PRINTRSS_INTEGRATION_TESTING  # noqa
-from collective.printrss.interfaces import Irss_feed
+from collective.printrss.interfaces import IRssFeed
 
 import unittest2 as unittest
 
@@ -25,7 +25,7 @@ class rss_feedIntegrationTest(unittest.TestCase):
     def test_schema(self):
         fti = queryUtility(IDexterityFTI, name='rss_feed')
         schema = fti.lookupSchema()
-        self.assertEqual(Irss_feed, schema)
+        self.assertEqual(IRssFeed, schema)
 
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='rss_feed')
@@ -35,10 +35,10 @@ class rss_feedIntegrationTest(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='rss_feed')
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(Irss_feed.providedBy(obj))
+        self.assertTrue(IRssFeed.providedBy(obj))
 
     def test_adding(self):
         self.portal.invokeFactory('rss_feed', 'rss_feed')
         self.assertTrue(
-            Irss_feed.providedBy(self.portal['rss_feed'])
+            IRssFeed.providedBy(self.portal['rss_feed'])
         )
