@@ -14,12 +14,15 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot src/plonetraining/testing/tests/robot/test_rss_feed.robot
+# $ bin/robot src/collective/printrss/tests/robot/test_rss_feed.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
 #
 # ============================================================================
+
+*** Variables ***
+${BROWSER} =  GoogleChrome
 
 *** Settings *****************************************************************
 
@@ -37,15 +40,16 @@ Test Teardown  Close all browsers
 Scenario: As a site administrator I can add a rss_feed
   Given a logged-in site administrator
     and an add rss_feed form
-   When I type 'My rss_feed' into the title field
+   When I type 'Test Linux feed' into the title field
+    and I type 'http://www.linux.com/feeds/all-content' into the url field
     and I submit the form
-   Then a rss_feed with the title 'My rss_feed' has been created
+   Then a rss_feed with the title 'Test Linux feed' has been created
 
 Scenario: As a site administrator I can view a rss_feed
   Given a logged-in site administrator
-    and a rss_feed 'My rss_feed'
+    and a rss_feed 'Test Linux feed'
    When I go to the rss_feed view
-   Then I can see the rss_feed title 'My rss_feed'
+   Then I can see the rss_feed title 'Test Linux feed'
 
 
 *** Keywords *****************************************************************
@@ -53,13 +57,13 @@ Scenario: As a site administrator I can view a rss_feed
 # --- Given ------------------------------------------------------------------
 
 a logged-in site administrator
-  Enable autologin as  Site Administrator
+  Enable autologin as  test
 
 an add rss_feed form
   Go To  ${PLONE_URL}/++add++rss_feed
 
-a rss_feed 'My rss_feed'
-  Create content  type=rss_feed  id=my-rss_feed  title=My rss_feed
+a rss_feed 'Test Linux feed'
+  Create content  type=rss_feed  id=test-linux-feed  title=Test Linux feed
 
 
 # --- WHEN -------------------------------------------------------------------
@@ -67,11 +71,14 @@ a rss_feed 'My rss_feed'
 I type '${title}' into the title field
   Input Text  name=form.widgets.title  ${title}
 
+I type '${url}' into the url field
+  Input Text  name=form.widgets.url  ${url}
+
 I submit the form
   Click Button  Save
 
 I go to the rss_feed view
-  Go To  ${PLONE_URL}/my-rss_feed
+  Go To  ${PLONE_URL}/test-linux-feed
   Wait until page contains  Site Map
 
 
@@ -85,3 +92,7 @@ a rss_feed with the title '${title}' has been created
 I can see the rss_feed title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}
+
+Test Setup
+  Open test browser
+  Set Window Size  1280  800

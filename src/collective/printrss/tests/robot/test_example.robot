@@ -21,6 +21,9 @@
 #
 # ============================================================================
 
+*** Variables ***
+${BROWSER} =  GoogleChrome
+
 *** Settings *****************************************************************
 
 Resource  plone/app/robotframework/selenium.robot
