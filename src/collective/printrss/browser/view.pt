@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+   lang="en"
+   metal:use-macro="context/main_template/macros/master"
+   i18n:domain="collective.printrss">
+<body>
+   <metal:content-core fill-slot="content-core">
+        <tal:rss
+                      tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+                      tal:repeat="item context/items">
+              <li class="portletItem oddrow"
+                  tal:define="oddrow repeat/item/odd"
+                  tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
+    
+                  <a href="#"
+                      tal:attributes="href item/url"
+                      class="tile">
+                      <span tal:replace="item/title">
+                          Title
+                      </span>
+                  </a>
+                  <time class="portletItemDetails"
+                            tal:condition="exists:item/updated">
+                    <span tal:omit-tag="" tal:content="python:toLocalizedTime(item['updated'])">19.02.2007</span>
+                  </time>
+              </li>
+          </tal:rss>
+
+   </metal:content-core>
+</body>
+</html>
