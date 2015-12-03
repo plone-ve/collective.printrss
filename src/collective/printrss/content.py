@@ -1,4 +1,3 @@
-#from plone.app.contenttypes.content import Link
 from plone.app.portlets.portlets.rss import RSSFeed
 from plone.dexterity.content import Item
 
