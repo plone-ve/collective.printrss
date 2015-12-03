@@ -35,11 +35,6 @@ class RssFeed(Item):
             feed = FEED_DATA[self.url] = RSSFeed(self.url, self.timeout)
         return feed
 
-    #@property
-    #def url(self):
-    #    """return url of feed for portlet"""
-    #    return self._getFeed().url
-
     @property
     def siteurl(self):
         """return url of site for portlet"""
@@ -50,11 +45,6 @@ class RssFeed(Item):
         """return rss url of feed for portlet"""
         return self.url.replace("http://", "feed://")
 
-    #@property
-    #def title(self):
-    #    """return title of feed for portlet"""
-    #    return getattr(self.data, 'portlet_title', '') or self._getFeed().title
-
     @property
     def feedAvailable(self):
         """checks if the feed data is available"""
@@ -62,7 +52,6 @@ class RssFeed(Item):
 
     @property
     def items(self):
-        #import ipdb;ipdb.set_trace()
         if self._getFeed().needs_update:
             self._getFeed().update()
         return self._getFeed().items[:self.count]
