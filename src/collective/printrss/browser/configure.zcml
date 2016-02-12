@@ -24,6 +24,11 @@
       permission="zope2.View"
       />
 
-      
+  <browser:page
+      for="*"
+      name="rss_feed_macro"
+      template="macros.pt"
+      permission="zope2.View"
+      />
       
 </configure>
