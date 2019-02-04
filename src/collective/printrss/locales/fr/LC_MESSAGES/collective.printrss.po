@@ -59,7 +59,7 @@ msgid "URL of RSS feed"
 msgstr "Lien vers le flux RSS"
 
 #: ../interfaces.py:40
-msgid "URL of main page of external site."
+msgid "URL of main page of external site"
 msgstr "Lien vers la page principale du site hébergeant le flux RSS."
 
 #: ../configure.zcml:21
