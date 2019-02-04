@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-03 14:29+0000\n"
+"POT-Creation-Date: 2019-02-04 13:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../interfaces.py:40
+#: ../interfaces.py:46
 msgid "Feed reload timeout"
 msgstr ""
 
@@ -29,11 +29,19 @@ msgstr ""
 msgid "How many items to list."
 msgstr ""
 
+#: ../interfaces.py:41
+msgid "If this field is completed, in index view, the title link of the rss feed will redirect to this url if not, you will be redirected to the homepage of the rss link site."
+msgstr ""
+
+#: ../configure.zcml:21
+msgid "Installs the collective.printrss add-on."
+msgstr ""
+
 #: ../interfaces.py:35
 msgid "Link of the RSS feed to display."
 msgstr ""
 
-#: ../interfaces.py:49
+#: ../interfaces.py:55
 msgid "Number of items must be <= 20!"
 msgstr ""
 
@@ -41,7 +49,7 @@ msgstr ""
 msgid "Number of items to display"
 msgstr ""
 
-#: ../interfaces.py:41
+#: ../interfaces.py:47
 msgid "Time in minutes after which the feed should be reloaded."
 msgstr ""
 
@@ -53,7 +61,14 @@ msgstr ""
 msgid "URL of RSS feed"
 msgstr ""
 
+#: ../interfaces.py:40
+msgid "URL of main page of external site"
+msgstr ""
+
+#: ../configure.zcml:21
+msgid "collective.printrss"
+msgstr ""
+
 #: ../profiles/default/types/rss_feed.xml
 msgid "rss_feed"
 msgstr ""
-
