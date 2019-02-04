@@ -36,6 +36,12 @@ class IRssFeed(Interface):
         required=True,
         default=u'')
 
+    url_main = schema.TextLine(
+        title=_(u'URL of main page of external site'),
+        description=_(u'If this field is completed, in index view, the title link of the rss feed will redirect to this url if not, you will be redirected to the homepage of the rss link site.'),
+        required=False,
+        default=u'')
+
     timeout = schema.Int(
         title=_(u'Feed reload timeout'),
         description=_(u'Time in minutes after which the feed should be '
