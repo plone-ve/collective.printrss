@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.0.1 (2019-03-11)
 ------------------
 
 - Open each link in new tab.
