@@ -6,7 +6,7 @@
               tal:define="oddrow repeat/item/odd"
               tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
 
-              <a href="#"
+              <a target="_blank" href="#"
                   tal:attributes="href item/url"
                   class="tile">
                   <span tal:replace="item/title">

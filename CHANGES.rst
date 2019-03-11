@@ -5,7 +5,7 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Open each link in new tab.
 
 
 1.0.0 (2019-02-21)
