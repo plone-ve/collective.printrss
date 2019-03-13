@@ -5,7 +5,7 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove date below links.
 
 
 1.0.1 (2019-03-11)

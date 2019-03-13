@@ -13,10 +13,6 @@
                       Title
                   </span>
               </a>
-              <time class="portletItemDetails"
-                        tal:condition="exists:item/updated">
-                <span tal:omit-tag="" tal:content="python:toLocalizedTime(item['updated'])">19.02.2007</span>
-              </time>
           </li>
       </tal:rss>
 </div>
