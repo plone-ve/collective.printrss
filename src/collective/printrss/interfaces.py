@@ -42,6 +42,12 @@ class IRssFeed(Interface):
         required=False,
         default=u'')
 
+    want_to_print_summary = schema.Bool(
+        title=_(u'Print summary'),
+        description=_(u'Do you want to print summary'),
+        required=False,
+        default=False)
+
     want_to_print_picture = schema.Bool(
         title=_(u'Print pictures'),
         description=_(u'Do you want to print picture'),
