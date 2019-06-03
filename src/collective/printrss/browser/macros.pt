@@ -13,6 +13,8 @@
                       Title
                   </span>
               </a>
+	      <div class="summary"><tal:summary replace="structure python:item.get('summary').replace('<img','<img style={}'.format(context.get_style)) if context.want_to_print_picture is True else item.get('summary').replace('<img','<img style=display:none')">summary</tal:summary></div>
+	      <div class="img" tal:condition="python:context.want_to_print_picture and item.get('image_url')"><img class="rss_picture" tal:attributes="style context/get_style;src item/image_url" /></div>
           </li>
       </tal:rss>
 </div>
