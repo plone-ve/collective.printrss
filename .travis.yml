@@ -15,6 +15,7 @@ before_install:
 install:
   - python bootstrap-buildout.py -c travis.cfg
   - bin/buildout -Nc travis.cfg
+  - travis_wait 30 mvn install
 script:
   - bin/code-analysis
   - bin/test
