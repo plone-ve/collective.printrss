@@ -1,8 +1,54 @@
+from DateTime import DateTime
+from DateTime.interfaces import DateTimeError
+
 from plone.app.portlets.portlets.rss import RSSFeed
 from plone.dexterity.content import Item
 
+import feedparser
 FEED_DATA = {}
 
+
+class RichRSSFeed(RSSFeed):
+
+    # __metaclass__ = feedparser
+
+    @property
+    def feed_version(self):
+        # rss20 (atom)
+        return self.rss_datas.version
+
+    def __init__(self, url, timeout):
+        self.rss_datas = feedparser.parse(url)
+        RSSFeed.__init__(self, url, timeout)
+
+    def _buildItemDict(self, item):
+        link = item.links[0]['href']
+        itemdict = {
+            'title': item.title,
+            'url': link,
+            'summary': item.get('description', ''),
+            'image_url':self._search_for_picture(item)
+        }
+        if hasattr(item, "updated"):
+            try:
+                itemdict['updated'] = DateTime(item.updated)
+            except DateTimeError:
+                # It's okay to drop it because in the
+                # template, this is checked with
+                # ``exists:``
+                pass
+        return itemdict
+        # myitem = item
+        # otheritem = RSSFeed._buildItemDict(self, item)
+
+    def _search_for_picture(self, item):
+        image_url = None
+        img_extensions = ['.bmp','.gif','.jpg','.png']
+        if hasattr(item,'links'):
+            for link in item.links:
+                if link.has_key('href') and image_url == None:
+                    image_url = link.href if (link.has_key('type') and 'image' in link.type) or any(x in link.href for x in img_extensions) else None
+        return image_url
 
 class RssFeed(Item):
 
@@ -31,8 +77,12 @@ class RssFeed(Item):
         feed = FEED_DATA.get(self.url, None)
         if feed is None:
             # create it
-            feed = FEED_DATA[self.url] = RSSFeed(self.url, self.timeout)
+            feed = FEED_DATA[self.url] = RichRSSFeed(self.url, self.timeout)
         return feed
+
+    @property
+    def get_style(self):
+        return "{0}".format(self.additional_style)
 
     @property
     def siteurl(self):

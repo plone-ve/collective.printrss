@@ -42,6 +42,24 @@ class IRssFeed(Interface):
         required=False,
         default=u'')
 
+    want_to_print_summary = schema.Bool(
+        title=_(u'Print summary'),
+        description=_(u'Do you want to print summary'),
+        required=False,
+        default=False)
+
+    want_to_print_picture = schema.Bool(
+        title=_(u'Print pictures'),
+        description=_(u'Do you want to print picture'),
+        required=False,
+        default=False)
+
+    additional_style = schema.TextLine(
+        title=_(u'Additional css style (if picture)'),
+        description=_(u'ex : max-width=25em;display:block;...'),
+        required=False,
+        default=u'')
+
     timeout = schema.Int(
         title=_(u'Feed reload timeout'),
         description=_(u'Time in minutes after which the feed should be '

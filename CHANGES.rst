@@ -5,7 +5,8 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Get pictures from rss feed.
+  [boulch]
 
 
 1.0.2 (2019-03-13)
