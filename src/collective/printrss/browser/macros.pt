@@ -6,7 +6,8 @@
               tal:define="oddrow repeat/item/odd"
               tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
 	      <div class="summary" tal:condition="context/want_to_print_summary"><tal:summary replace="structure python:item.get('summary').replace('<img','<img style={}'.format(context.get_style)) if context.want_to_print_picture is True else item.get('summary').replace('<img','<img style=display:none')">summary</tal:summary></div>
-	      <div class="img" tal:condition="python:context.want_to_print_picture and item.get('image_url')"><img class="rss_picture" tal:attributes="style context/get_style;src item/image_url" /></div>
+	      <!--div class="img" tal:condition="python:context.want_to_print_picture and item.get('image_url')"><img class="rss_picture" tal:attributes="style context/get_style;src item/image_url" /></div-->
+	      <div class="img" tal:condition="python:context.want_to_print_picture and item.get('image_url')" tal:attributes="style python:'{} background-image:url({})'.format(context.get_style, item.get('image_url'))" />
               <a target="_blank" href="#"
                   tal:attributes="href item/url"
                   class="tile">
