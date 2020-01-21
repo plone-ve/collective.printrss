@@ -5,6 +5,7 @@ from plone.app.portlets.portlets.rss import RSSFeed
 from plone.dexterity.content import Item
 
 import feedparser
+
 FEED_DATA = {}
 
 
@@ -22,16 +23,16 @@ class RichRSSFeed(RSSFeed):
         RSSFeed.__init__(self, url, timeout)
 
     def _buildItemDict(self, item):
-        link = item.links[0]['href']
+        link = item.links[0]["href"]
         itemdict = {
-            'title': item.title,
-            'url': link,
-            'summary': item.get('description', ''),
-            'image_url': self._search_for_picture(item)
+            "title": item.title,
+            "url": link,
+            "summary": item.get("description", ""),
+            "image_url": self._search_for_picture(item),
         }
         if hasattr(item, "updated"):
             try:
-                itemdict['updated'] = DateTime(item.updated)
+                itemdict["updated"] = DateTime(item.updated)
             except DateTimeError:
                 # It's okay to drop it because in the
                 # template, this is checked with
@@ -43,15 +44,20 @@ class RichRSSFeed(RSSFeed):
 
     def _search_for_picture(self, item):
         image_url = None
-        img_extensions = ['.bmp','.gif','.jpg','.png']
-        if hasattr(item,'links'):
+        img_extensions = [".bmp", ".gif", ".jpg", ".png"]
+        if hasattr(item, "links"):
             for link in item.links:
-                if link.has_key('href') and image_url == None:
-                    image_url = link.href if (link.has_key('type') and 'image' in link.type) or any(x in link.href for x in img_extensions) else None
+                if "href" in link and image_url is None:
+                    image_url = (
+                        link.href
+                        if ("type" in link and "image" in link.type)
+                        or any(x in link.href for x in img_extensions)
+                        else None
+                    )
         return image_url
 
-class RssFeed(Item):
 
+class RssFeed(Item):
     @property
     def initializing(self):
         """should return True if deferred template should be displayed"""
@@ -82,7 +88,7 @@ class RssFeed(Item):
 
     @property
     def get_style(self):
-        return "{0}".format(self.additional_style or '')
+        return "{0}".format(self.additional_style or "")
 
     @property
     def siteurl(self):
@@ -103,7 +109,7 @@ class RssFeed(Item):
     def items(self):
         if self._getFeed().needs_update:
             self._getFeed().update()
-        return self._getFeed().items[:self.count]
+        return self._getFeed().items[: self.count]
 
     @property
     def enabled(self):
