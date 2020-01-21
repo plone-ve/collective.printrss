@@ -27,7 +27,7 @@ class RichRSSFeed(RSSFeed):
             'title': item.title,
             'url': link,
             'summary': item.get('description', ''),
-            'image_url':self._search_for_picture(item)
+            'image_url': self._search_for_picture(item)
         }
         if hasattr(item, "updated"):
             try:
@@ -82,7 +82,7 @@ class RssFeed(Item):
 
     @property
     def get_style(self):
-        return "{0}".format(self.additional_style)
+        return "{0}".format(self.additional_style or '')
 
     @property
     def siteurl(self):
