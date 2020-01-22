@@ -1,4 +1,5 @@
 <div id="macros_feed" class="feed" metal:define-macro="feed">
+<ul class="feed">
   <tal:rss tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;" tal:repeat="item context/items">
     <li class="portletItem oddrow" tal:define="oddrow repeat/item/odd" tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
       <div class="summary" tal:condition="context/want_to_print_summary">
@@ -12,4 +13,5 @@
       </a>
     </li>
   </tal:rss>
+</ul>
 </div>
