@@ -5,7 +5,7 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove field to customize img style.
 
 
 1.0.3 (2019-08-07)

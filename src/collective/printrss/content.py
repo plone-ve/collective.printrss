@@ -87,10 +87,6 @@ class RssFeed(Item):
         return feed
 
     @property
-    def get_style(self):
-        return "{0}".format(self.additional_style or "")
-
-    @property
     def siteurl(self):
         """return url of site for portlet"""
         return self._getFeed().siteurl

@@ -54,12 +54,6 @@ class IRssFeed(Interface):
         required=False,
         default=False)
 
-    additional_style = schema.TextLine(
-        title=_(u'Additional css style (if picture)'),
-        description=_(u'ex : max-width=25em;display:block;...'),
-        required=False,
-        default=u'')
-
     timeout = schema.Int(
         title=_(u'Feed reload timeout'),
         description=_(u'Time in minutes after which the feed should be '
