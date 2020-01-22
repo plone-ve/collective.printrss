@@ -5,13 +5,15 @@ Changelog
 1.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add ul
+  [boulch]
 
 
 1.0.4 (2020-01-22)
 ------------------
 
 - Remove field to customize img style.
+  [boulch]
 
 
 1.0.3 (2019-08-07)
