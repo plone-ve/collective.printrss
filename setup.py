@@ -19,7 +19,7 @@ long_description = (
 
 setup(
     name='collective.printrss',
-    version='1.0.5.dev0',
+    version='1.0.5',
     description="Products to print a rss feed from a given URL.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
