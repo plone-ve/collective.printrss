@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-02-04 12:25+0000\n"
+"POT-Creation-Date: 2020-05-02 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,15 @@ msgstr ""
 msgid "Description"
 msgstr "Description"
 
-#: ../interfaces.py:46
+#: ../interfaces.py:53
+msgid "Do you want to print picture"
+msgstr ""
+
+#: ../interfaces.py:47
+msgid "Do you want to print summary"
+msgstr ""
+
+#: ../interfaces.py:58
 msgid "Feed reload timeout"
 msgstr "Temps qui doit s'écouler avant le rechargement du flux (en minutes)"
 
@@ -38,7 +46,7 @@ msgstr "Installer le module collective.printrss"
 msgid "Link of the RSS feed to display."
 msgstr "Lien du flux RSS à afficher"
 
-#: ../interfaces.py:55
+#: ../interfaces.py:67
 msgid "Number of items must be <= 20!"
 msgstr "Le nombre de résultat à afficher doit être <= 20"
 
@@ -46,7 +54,15 @@ msgstr "Le nombre de résultat à afficher doit être <= 20"
 msgid "Number of items to display"
 msgstr "Nombre de résultat à afficher"
 
-#: ../interfaces.py:47
+#: ../interfaces.py:52
+msgid "Print pictures"
+msgstr ""
+
+#: ../interfaces.py:46
+msgid "Print summary"
+msgstr ""
+
+#: ../interfaces.py:59
 msgid "Time in minutes after which the feed should be reloaded."
 msgstr "Temps (en minutes) pour le rechargement du flux."
 

@@ -5,7 +5,8 @@ Changelog
 1.0.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Updated gettext files support
+  [macagua]
 
 
 1.0.5 (2020-01-22)
