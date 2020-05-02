@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[plone-collective.collective-printrss-pot]
+file_filter = src/collective/printrss/locales/<lang>/LC_MESSAGES/collective.printrss.po
+minimum_perc = 0
+source_file = src/collective/printrss/locales/collective.printrss.pot
+source_lang = en
+type = PO
