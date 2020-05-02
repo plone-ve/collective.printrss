@@ -22,7 +22,7 @@ setup(
     version='1.0.6.dev0',
     description="Products to print a rss feed from a given URL.",
     long_description=long_description,
-    # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    # Get more from https://pypi.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
@@ -32,10 +32,10 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
-    keywords='Python Plone',
+    keywords='Python Plone Products print rss',
     author='boulch',
     author_email='christophe.boulanger@imio.be',
-    url='https://pypi.python.org/pypi/collective.printrss',
+    url='https://pypi.org/project/collective.printrss',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],
