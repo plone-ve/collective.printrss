@@ -1,0 +1,92 @@
+# Translation of collective.printrss.pot to Spanish
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.printrss 1.0\n"
+"POT-Creation-Date: 2020-05-02 12:41+0000\n"
+"PO-Revision-Date: 2020-05-02 08:37-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.printrss\n"
+"Language: es\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ../interfaces.py:23
+msgid "Description"
+msgstr "Descripción"
+
+#: ../interfaces.py:53
+msgid "Do you want to print picture"
+msgstr "¿Quiere imprimir foto?"
+
+#: ../interfaces.py:47
+msgid "Do you want to print summary"
+msgstr "¿Quiere imprimir resumen?"
+
+#: ../interfaces.py:58
+msgid "Feed reload timeout"
+msgstr "Tiempo que debe transcurrir antes de volver a cargar la transmisión (en minutos)"
+
+#: ../interfaces.py:29
+msgid "How many items to list."
+msgstr "Número de resultados a mostrar."
+
+#: ../interfaces.py:41
+msgid "If this field is completed, in index view, the title link of the rss feed will redirect to this url if not, you will be redirected to the homepage of the rss link site."
+msgstr "Si se completa este campo, en la vista de índice, el enlace del título del feed rss redirigirá a esta URL; de lo contrario, se lo redirigirá a la página de inicio del sitio del enlace RSS."
+
+#: ../configure.zcml:21
+msgid "Installs the collective.printrss add-on."
+msgstr "Instale el complemento collective.printrss."
+
+#: ../interfaces.py:35
+msgid "Link of the RSS feed to display."
+msgstr "Enlace de feed RSS para mostrar."
+
+#: ../interfaces.py:67
+msgid "Number of items must be <= 20!"
+msgstr "¡El número de resultados a mostrar debe ser <= 20!"
+
+#: ../interfaces.py:28
+msgid "Number of items to display"
+msgstr "Número de resultados a mostrar"
+
+#: ../interfaces.py:52
+msgid "Print pictures"
+msgstr "Imprimir fotos"
+
+#: ../interfaces.py:46
+msgid "Print summary"
+msgstr "Imprimir resumen"
+
+#: ../interfaces.py:59
+msgid "Time in minutes after which the feed should be reloaded."
+msgstr "Tiempo en minutos después del cual se debe volver a cargar el feed."
+
+#: ../interfaces.py:18
+msgid "Title"
+msgstr "Título"
+
+#: ../interfaces.py:34
+msgid "URL of RSS feed"
+msgstr "Dirección URL del feed RSS"
+
+#: ../interfaces.py:40
+msgid "URL of main page of external site"
+msgstr "Enlace a la página principal del sitio que aloja el feed RSS"
+
+#: ../configure.zcml:21
+msgid "collective.printrss"
+msgstr "collective.printrss"
+
+#: ../profiles/default/types/rss_feed.xml
+msgid "rss_feed"
+msgstr "Feed RSS"
